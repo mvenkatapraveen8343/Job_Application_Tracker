@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="table-card">
+    <h2>Reports</h2>
+    <div class="table-actions">
+        <a href="{{ url_for('export_csv') }}" class="btn">Export CSV</a>
+        <a href="{{ url_for('export_excel') }}" class="btn">Export Excel</a>
+    </div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in stats %}
+            <tr>
+                <td class="status">{{ row.status }}</td>
+                <td>{{ row.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

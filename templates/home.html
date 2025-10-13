@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero">
+    <h1>Welcome to Job Tracker</h1>
+    <p style="margin-bottom: 50px;">Easily manage and track all your job applications in one place.</p>
+    {% if not session.get('user_id') %}
+        <a href="{{ url_for('register') }}" class="btn btn-lg">Get Started</a>
+    {% else %}
+        <a href="{{ url_for('applications') }}" class="btn btn-lg">Go to Dashboard</a>
+    {% endif %}
+</div>
+
+<div class="features">
+    <div class="feature-card">
+        <h3>📌 Track Applications</h3>
+        <p>Keep a record of every job you’ve applied to and never lose track.</p>
+    </div>
+    <div class="feature-card">
+        <h3>📊 Reports & Insights</h3>
+        <p>View statistics of your job search and identify improvement areas.</p>
+    </div>
+    <div class="feature-card">
+        <h3>📂 Export Data</h3>
+        <p>Download your applications as CSV or Excel for professional use.</p>
+    </div>
+</div>
+{% endblock %}
