@@ -2,7 +2,7 @@
 {% block content %}
 <div class="hero">
     <h1>Welcome to Job Tracker</h1>
-    <p style="margin-bottom: 50px;">Easily manage and track all your job applications in one place.</p>
+    <p>Easily manage and track all your job applications in one place.</p>
     {% if not session.get('user_id') %}
         <a href="{{ url_for('register') }}" class="btn btn-lg">Get Started</a>
     {% else %}

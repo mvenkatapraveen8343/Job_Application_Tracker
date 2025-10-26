@@ -12,6 +12,37 @@ db_config = {
 def get_conn():
     return pymysql.connect(**db_config)
 
+def db_init():
+    conn = get_conn()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) UNIQUE NOT NULL,
+        email VARCHAR(100) UNIQUE NOT NULL,
+        password VARCHAR(200) NOT NULL
+    );
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS applications (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT NOT NULL,
+        company VARCHAR(100) NOT NULL,
+        role VARCHAR(100) NOT NULL,
+        date_applied DATE NOT NULL,
+        status VARCHAR(50) NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+    """)
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+db_init()
+
 def db_check_user_by_email(email):
     conn = get_conn()
     cursor = conn.cursor()

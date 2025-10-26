@@ -8,18 +8,26 @@ body {
     min-height: 100vh;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* --- Navbar --- */
 .navbar {
     background: #1f3c88;
     padding: 25px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
-.navbar .logo {
+
+.logo {
     font-size: 22px;
     font-weight: 700;
     color: #fff;
 }
+
 .navbar ul {
     list-style: none;
     margin: 0;
@@ -27,55 +35,32 @@ body {
     display: flex;
     gap: 30px;
 }
-.navbar a {
+
+.navbar ul a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     transition: 0.3s;
 }
-.navbar a:hover {
+
+.navbar ul a:hover {
     color: #00d4ff;
 }
 
+/* --- Footer --- */
 .footer {
     background: #1f3c88;
     color: #fff;
     text-align: center;
     padding: 10px;
     margin-top: auto;
-    font-size: 14px;
+    font-size: 16px;
 }
 
-.form-card {
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 30px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.form-card h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #1f3c88;
-}
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 15px;
-}
-.form-actions {
-    text-align: center;
-}
+/* --- Buttons --- */
 .btn {
-    padding: 8px 18px;
+    padding: 10px 18px;
     border: none;
     border-radius: 5px;
     background: #1f3c88;
@@ -83,115 +68,427 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
-    text-decoration: none;
     font-size: 15px;
+    text-align: center;
+    display: inline-block;
 }
+
 .btn:hover {
     background: #1452cc;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-.btn-lg {
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-.btn.edit { background: #00a86b; margin-right: 15px;}
-.btn.edit:hover { background: #008f5a; }
-.btn.delete { background: #e63946; }
-.btn.delete:hover { background: #c62828; }
-.btn.cancel { background: #f11b1be3; margin-left: 15px;}
-.btn.cancel:hover { background: #ff0000; }
 
-.hero {
-    max-width: 750px;
-    margin: 60px auto;
+.btn.login {
+    width: 100%;
+}
+
+.btn.register {
+    width: 100%;
+}
+
+/* --- Cards and Containers --- */
+.form-card,
+.table-card,
+.feature-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    padding: 30px;
+}
+
+/* --- Form Styles --- */
+.form-card {
+    max-width: 400px;
+}
+
+.form-card h2 {
+    margin-bottom: 20px;
     text-align: center;
+    color: #1f3c88;
 }
-.hero h1 { color: #1f3c88; margin-bottom: 10px; font-size: 32px; }
-.hero p { color: #555; margin-bottom: 20px; font-size: 16px; }
 
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.form-group select {
+    width: 100%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.save,
+.cancel {
+    flex: 1;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.save {
+    background: #1f3c88;
+    color: #fff;
+}
+
+.save:hover {
+    background: #1452cc;
+}
+
+.cancel {
+    background: #e63946;
+    color: #fff;
+}
+
+.cancel:hover {
+    background: #c62828;
+}
+
+/* --- Switch Text --- */
+.switch-text {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.switch-text a {
+    color: #1f3c88;
+    font-weight: 600;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- Hero Section --- */
+.hero {
+    max-width: 500px;
+    padding: 30px 20px 40px 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.hero h1 {
+    color: #1f3c88;
+    margin: 0px auto;
+    font-size: 32px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hero:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Features --- */
 .features {
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 30px;
-}
-.feature-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-left: 30px;
-    box-shadow: 12px 12px 12px 4px rgba(0, 0, 0, 0.212);
-    flex: 1 1 220px;
-    max-width: 300px;
-    text-align: center;
+    gap: 0;
 }
 
+.feature-card {
+    flex: 1 1 20px;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px;
+    margin: 0 50px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Table --- */
 .table-card {
-    max-width: 900px;
+    max-width: 800px;
     margin: 40px auto;
     padding: 25px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.table-card h2 {
+
+.table-card .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
-    color: #1f3c88;
 }
+
+.table-card .table-header h2 {
+    margin: 0;
+}
+
+.table-card .table-header .btn {
+    padding: 10px 18px;
+    font-size: 15px;
+}
+
+.table-card .table-header .export-buttons {
+    display: flex;
+    gap: 10px;
+}
+
 .styled-table {
     width: 100%;
     border-collapse: collapse;
 }
-.styled-table th, .styled-table td {
-    padding: 10px 12px;
+
+.styled-table th,
+.styled-table td {
+    padding: 14px 16px;
     text-align: center;
     border: 1px solid #b6b2b2;
+    font-size: 15px;
 }
+
 .styled-table th {
     background: #f0f4ff;
     color: #1f3c88;
 }
-.styled-table tr:hover { background: #f9fcff; }
-.empty { text-align: center; padding: 20px; color: #888; }
-.table-actions { margin-bottom: 15px; text-align: right; }
+
+.styled-table tr:hover {
+    background: #f9fcff;
+}
+
+.table-card .btn.edit {
+    background: none;
+    color: green;
+    width: 40px;
+    border: 1px solid green;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.table-card .btn.edit:hover {
+    background-color: green;
+    color: white;
+}
+
+.table-card .btn.delete {
+    background: none;
+    color: red;
+    width: 40px;
+    border: 1px solid red;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.table-card .btn.delete:hover {
+    background-color: red;
+    color: white;
+}
+
+.empty {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
 
 .status {
     font-weight: 600;
     color: #2c3e50;
 }
 
-.switch-text {
-    text-align: center;
-    margin-top: 15px;
-}
-.switch-text a {
-    color: #1f3c88;
-    font-weight: 600;
-    text-decoration: none;
-}
-.switch-text a:hover { text-decoration: underline; }
-
 .error {
-    background: #f8d7da;
-    color: #721c24;
+    background-color: rgba(227, 179, 179, 0.711);
+    color: red;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .features {
+        justify-content: center;
+    }
+
+    .feature-card {
+        margin: 15px;
+    }
+
+    .table-card {
+        max-width: 90%;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column;
         align-items: center;
     }
-    .feature-card {
-        max-width: 90%;
+
+    .navbar ul {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 10px;
+        padding-right: 30px;
     }
-    .table-card, .form-card {
-        margin: 30px 15px;
+
+    .form-card {
+        max-width: 60%;
+        margin: 30px auto;
         padding: 20px;
+    }
+
+    .hero {
+        max-width: 675px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        margin-bottom: 10px;
+    }
+
+    .btn-lg {
+        width: 75%;
+        margin-bottom: 10px;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+
+    .switch-text {
+        justify-content: center;
+    }
+}
+@media (max-width: 420px) {
+    .navbar ul {
+        justify-content: flex-end;
+        padding-right: 15px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .hero {
+        max-width: 300px;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .form-card,
+    .table-card {
+        max-width: 80%;
+        margin: 30px;
+        padding: 25px;
+    }
+
+    .btn-lg {
+        width: 75%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 380px;
+        gap: 15px;
+        margin: 0 auto;
+    }
+
+    .footer {
+        padding: 15px 10px;
+        font-size: 13px;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .table-card .table-header .export-buttons {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .styled-table td {
+        white-space: nowrap;
+    }
+
+    .table-card .table-header .btn {
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+
+    .table-card .table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 }

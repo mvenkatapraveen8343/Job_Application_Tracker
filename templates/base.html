@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Job Tracker</div>
-        <ul>
+        <a href="/" class="logo">Job Tracker</a>
+        <ul class="nav-links">
             {% if session.get('user_id') %}
             <li><a href="{{ url_for('applications') }}">Applications</a></li>
             <li><a href="{{ url_for('reports') }}">Reports</a></li>
@@ -21,12 +21,10 @@
         </ul>
     </nav>
 
-    <!-- Page Content -->
     <main class="content">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>© 2025 Job Tracker | Track & manage your career opportunities</p>
     </footer>
